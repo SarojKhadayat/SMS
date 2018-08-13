@@ -1,0 +1,23 @@
+﻿@using System.Web.UI.WebControls
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create by Raw HTML</h2>
+
+<form action="/Test/Create" method="post">
+    <input type="text" name="StudentName" placeholder="Enter student Name..">
+    <input type="text" name="StudentAddress" placeholder="Enter student Address..">
+    <input type="text" name="DOB" placeholder="Enter Date of birth ..">
+    <input type="submit" value="submit" class="btn btn-primary" />
+</form>
+<h2>Create by Razor Syntax</h2>
+
+@using (Html.BeginForm("Create", "Test", FormMethod.Post))
+{
+    @Html.TextBox("studentName", null, htmlAttributes: new { placeholder = "Enter Student Name.." })
+    @Html.TextBox("StudentAddress", null, htmlAttributes: new { placeholder = "Enter Student Address.." })
+    @Html.TextBox("DOB", null, htmlAttributes: new { placeholder = "Enter DOB.." })
+    <input type="submit" value="submit" class="btn btn-primary" />
+}

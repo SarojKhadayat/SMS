@@ -1,0 +1,54 @@
+﻿<script src="~/Scripts/jquery-1.10.2.js"></script>
+<form style="margin-top: 10px;">
+    <input type="button" id="test" value="click Me!" class="btn-primary" />
+    <div id="content">
+        content
+    </div>
+    <p>Hove me</p>
+    <p>Hove me also </p>
+</form>
+
+<script>
+    $('#test').on('click',function() {
+        $('#content').text('content changed');
+        //if ($('#test').hasClass('btn-primary')) 
+        //    $('#test').removeClass('btn-primary').addClass('btn-danger');
+        //else if (($('#test').hasClass('btn-danger')))
+        //    $('#test').removeClass('btn-danger').addClass('btn-primary');
+
+        // alert('test');
+        $('#test').toggleClass('btn-primary btn-danger');
+        console.log("class toggled");
+        window.location = '@Url.Action("about","home")';
+    });
+    var changeText = function() {
+        document.getElementById("content").innerHTML="content changed";
+        $('#content').text('content changed');
+        //if ($('#test').hasClass('btn-primary')) 
+        //    $('#test').removeClass('btn-primary').addClass('btn-danger');
+        //else if (($('#test').hasClass('btn-danger')))
+        //    $('#test').removeClass('btn-danger').addClass('btn-primary');
+          
+        // alert('test');
+        $('#test').toggleClass('btn-primary btn-danger');
+        console.log("class toggled");
+        
+     }
+    $('p').on("mouseover",
+        function() {
+            $('p').addClass('red');
+        });
+    $('p').on("mouseout",
+        function() {
+            $('p').addClass('blue');
+        });
+</script>
+<style>
+    .red {
+        background-color: red;
+    }
+    .blue {
+        background-color: blue;
+    }
+     
+</style>

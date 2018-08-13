@@ -1,0 +1,19 @@
+﻿@using SMS.Models.DbModel
+@model SMS.Models.ViewModel.StudentViewModel
+@{
+    ViewBag.Title = "Create2";
+}
+
+<h2>Create2</h2>
+
+@using (Html.BeginForm("Create2", "Test"))
+{
+    @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @placeholder = "Enter First Name" })
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+    @Html.TextBoxFor(model => model.Address, htmlAttributes: new { @placeholder = "Enter Address" })
+    @Html.TextBoxFor(model => model.PhoneNumber, htmlAttributes: new { @placeholder = "Enter PhoneNumber" })
+    @Html.TextBoxFor(model => model.DateOfBirth, htmlAttributes: new { @placeholder = "Enter DateOfBirth" })
+    @Html.TextBoxFor(model => model.FatherName, htmlAttributes: new { @placeholder = "Enter Father Name" })
+    <input type="submit" value="create" class="btn btn-primary" />
+}
